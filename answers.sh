@@ -23,9 +23,16 @@ WHERE students.name = 'Layal';
 UPDATE graduates SET graduation = '08-09-2018' WHERE name = 'Layal';
 DELETE FROM students WHERE name = 'Layal';
 
-SELECT employees.name, employees.Company, companies.date FROM employees Inner join companies ON employees.Company=companies.name;
-SELECT employees.name FROM employees Inner join companies ON employees.Company=companies.name and companies.Date < 2000;
-SELECT companies.name FROM companies Inner join employees ON employees.Company=companies.name and employees.Role='Graphic Designer';
+SELECT employees.name, employees.company, companies.date 
+FROM employees 
+Inner join companies ON employees.company=companies.name;
+SELECT employees.name FROM employees 
+Inner join companies
+ON employees.company=companies.name and companies.ate < 2000;
+SELECT companies.name
+FROM companies
+Inner join employees
+ON employees.company=companies.name and employees.role='Graphic Designer';
 
 select name from students where points=(SELECT MAX(points) from students);
 select AVG(points) from students;
